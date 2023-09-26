@@ -22,7 +22,7 @@ const ReleaseHiddenComponent = () => {
         let box_items = gsap.utils.toArray(".horizontal__item");
         const timeln = gsap.timeline({ paused: true });
         gsap.registerPlugin(ScrollTrigger)
-        timeln.fromTo(colLeft, {y: 0}, {y: '280vh', duration: 1, ease: 'none'}, 0);
+        timeln.fromTo(colLeft, {y: 0}, {y: '180vh', duration: 1, ease: 'none'}, 0);
         ScrollTrigger.create({
             animation : timeln,
             trigger: vertical,
