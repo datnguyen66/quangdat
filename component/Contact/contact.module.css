@@ -1,0 +1,42 @@
+.wrap_contact{
+    max-width: 100px;
+    margin-left: 40%;
+}
+.ul{
+    list-style-type: none;
+    display: block;
+}
+.li{
+    color: var(--text);
+    float: left; /* Đặt mục danh sách bên trái */
+    position: relative;
+    margin-bottom: 50px;
+}
+.li:last-child{
+    margin-bottom: 100px;
+}
+.a{
+    display: block; /* Hiển thị liên kết dưới dạng khối để tạo khoảng cách */
+    text-align: center; /* Căn giữa văn bản trong liên kết */
+    padding: 1px 0px; /* Khoảng cách giữa các liên kết */
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    color: var(--text);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'IBM Plex Mono', monospace;
+}
+.a::after{
+        content: '';
+        display: block; 
+        width: 0; 
+        height: 1px; 
+        background-color: #fff; 
+        position: absolute; 
+        bottom: 0; 
+        left: 0; 
+        transition: width .3s ease-out; 
+}
+.a:hover::after{
+    width: 100%;
+}

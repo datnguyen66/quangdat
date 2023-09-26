@@ -1,0 +1,13 @@
+.h1 {
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 1px 0 #09448f, 0 2px 0 #093f85, 0 3px 0 #083b7c,
+      0 4px 0 #083672, 0 5px 0 #073268, 0 6px 0 #062d5f, 0 7px 0 #062955,
+      0 8px 0 #05244c, 0 0 5px rgb(0 62 142 / 5%), 0 -1px 3px rgb(0 62 142 / 20%),
+      0 9px 9px rgb(0 62 142 / 30%), 0 12px 12px rgb(0 62 142 / 30%),
+      0 15px 15px rgb(0 62 142 / 30%);
+    font-size: 4rem;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+  }

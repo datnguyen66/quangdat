@@ -1,0 +1,44 @@
+.hidden_content{
+    --x: 0px;
+    --y: 0px;
+    --size: 0px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: var(--cursor);
+    background: -moz-linear-gradient(
+      180deg,
+      var(--cursor) 0%,
+      #4dabf5 50%,
+      #2196f3 100%
+    );
+    background: -webkit-linear-gradient(
+      180deg,
+      var(--cursor) 0%,
+      #4dabf5 50%,
+      #2196f3 100%
+    );
+    background: linear-gradient(
+      180deg,
+      var(--cursor) 0%,
+      #4dabf5 50%,
+      #2196f3 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#47cfed",endColorstr="#2196f3",GradientType=1);
+    color: var(--bg);
+    --mask: radial-gradient(
+      circle at var(--x) var(--y),
+      black var(--size),
+      transparent 0
+    );
+    -webkit-mask-image: var(--mask);
+    mask-image: var(--mask);
+    pointer-events: none;
+    visibility: hidden;
+  }
+.content{
+  position: relative;
+  z-index: 15;
+}
