@@ -21,6 +21,7 @@ gsap.registerPlugin(ScrollTrigger)
 const ReleaseComponent = () => {
     const refVertical = useRef(null)
     const refColLeft = useRef(null)
+    const refColRight = useRef(null)
     const refHorizontal = useRef(null)
     const refHoriItem = useRef(null)
     const refTitleHead1 = useRef(null)
@@ -30,14 +31,17 @@ const ReleaseComponent = () => {
     useEffect(() => {
         const vertical = refVertical.current
         const colLeft = refColLeft.current
+        const colRight = refColRight.current
         const horizontal = refHorizontal.current
         const titleHead1 = refTitleHead1.current
         const titleHead2 = refTitleHead2.current
         const titleHead3 = refTitleHead3.current
 
+        console.log(colRight.scrollHeight);
+
         let box_items = gsap.utils.toArray(".horizontal__item");
         const timeln = gsap.timeline({ paused: true });
-        timeln.fromTo(colLeft, {y: 0}, {y: '290vh', duration: 1, ease: 'none'}, 0);
+        timeln.fromTo(colLeft, {y: 0}, {y: `${colRight.scrollHeight - colLeft.scrollHeight}`, duration: 1, ease: 'none'}, 0);
         ScrollTrigger.create({
             animation : timeln,
             trigger: vertical,
@@ -85,7 +89,7 @@ const ReleaseComponent = () => {
                         <div class="col col_left" ref={refColLeft}>
                             <h2 class="vertical__heading" ><span ref={refTitleHead1}>I'm</span><span ref={refTitleHead2}>Quang Dat</span><span ref={refTitleHead3}>Nguyen</span></h2>
                         </div>
-                        <div class="col col_right">
+                        <div class="col col_right" ref={refColRight}>
                             <div class="vertical__item">
                                 <h3>Release</h3>
                                 <p>First of all, It's wonderful to be here. Welcome! <br/>
