@@ -12,17 +12,20 @@ import classes from './releaseHidden.module.css'
 const ReleaseHiddenComponent = () => {
     const refVertical = useRef(null)
     const refColLeft = useRef(null)
+    const refColRight = useRef(null)
     const refHorizontal = useRef(null)
     const refHoriItem = useRef(null)
 
     useEffect(() => {
         const vertical = refVertical.current
         const colLeft = refColLeft.current
+        const colRight = refColRight.current
         const horizontal = refHorizontal.current
+
         let box_items = gsap.utils.toArray(".horizontal__item");
         const timeln = gsap.timeline({ paused: true });
         gsap.registerPlugin(ScrollTrigger)
-        timeln.fromTo(colLeft, {y: 0}, {y: '290vh', duration: 1, ease: 'none'}, 0);
+        timeln.fromTo(colLeft, {y: 0}, {y: `${colRight.scrollHeight - colLeft.scrollHeight}`, duration: 1, ease: 'none'}, 0);
         ScrollTrigger.create({
             animation : timeln,
             trigger: vertical,
@@ -53,33 +56,33 @@ const ReleaseHiddenComponent = () => {
                         <div class="col col_left" ref={refColLeft}>
                             <h2 class="vertical__heading"><span className={classes.title}>I'm</span><span className={classes.title}>front-end</span><span className={classes.title}>developer</span></h2>
                         </div>
-                        <div class="col col_right">
+                        <div class="col col_right" ref={refColRight} className={classes.rightContent}>
                             <div class="vertical__item">
-                                <h3>Release</h3>
-                                <p>First of all, It's wonderful to be here. Welcome! <br/>
+                                <h3 className={classes.titleWhite}>Release</h3>
+                                <p className={classes.rightContent}>First of all, It's wonderful to be here. Welcome! <br/>
                     My name is Dat Q. Nguyen, I am Vietnamese, currently living and working in Ho Chi Minh City. </p>
                             </div>
                             <div class="vertical__item">
-                                <h3>History</h3>
-                                <p>I'm a front-end developer who loves to build beautiful and meaningful online experiences.
+                                <h3 className={classes.titleWhite}>History</h3>
+                                <p className={classes.rightContent}>I'm a front-end developer who loves to build beautiful and meaningful online experiences.
                                     <br/>
                                     <br/>
-                                    October 2021, my work has been creating websites using Angular.
+                                    Since October 2021, my work has been creating websites using Angular.
                                     <br/>
                                     <br/>
                                     Since February 2022, my work has been creating websites using Reactjs.
                                 </p>
                             </div>
                             <div class="vertical__item">
-                                <h3>PRINCIPLES & VALUES</h3>
+                                <h3 className={classes.titleWhite}>PRINCIPLES & VALUES</h3>
                                 <ul>
-                                    <p><span class="value__number">01.</span>Always working with accuracy and transparency.</p>
+                                    <p className={classes.rightContent}><span class="value__number">01.</span>Always working with accuracy and transparency.</p>
                                 </ul>
                                 <ul>
-                                    <p><span class="value__number">02.</span>Well-made website require effort and comprehension.</p>
+                                    <p className={classes.rightContent}><span class="value__number">02.</span>Well-made website require effort and comprehension.</p>
                                 </ul>
                                 <ul>
-                                    <p><span class="value__number">03.</span>Focus is the key, every minute is important.</p>
+                                    <p className={classes.rightContent}><span class="value__number">03.</span>Focus is the key, every minute is important.</p>
                                 </ul>
                             </div>
                         </div>

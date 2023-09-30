@@ -37,18 +37,18 @@ const ReleaseComponent = () => {
         const titleHead2 = refTitleHead2.current
         const titleHead3 = refTitleHead3.current
 
-        console.log(colRight.scrollHeight);
-
         let box_items = gsap.utils.toArray(".horizontal__item");
-        const timeln = gsap.timeline({ paused: true });
-        timeln.fromTo(colLeft, {y: 0}, {y: `${colRight.scrollHeight - colLeft.scrollHeight}`, duration: 1, ease: 'none'}, 0);
-        ScrollTrigger.create({
-            animation : timeln,
-            trigger: vertical,
-            start: "top top",
-            end: "bottom center",
-            scrub: true
-        });
+        if(document.documentElement.clientWidth > 800){
+            const timeln = gsap.timeline({ paused: true });
+            timeln.fromTo(colLeft, {y: 0}, {y: `${colRight.scrollHeight - colLeft.scrollHeight}`, duration: 1, ease: 'none'}, 0);
+            ScrollTrigger.create({
+                animation : timeln,
+                trigger: vertical,
+                start: "top top",
+                end: "bottom center",
+                scrub: true
+            });
+        }
         gsap.to(box_items, {
         xPercent: -100 * (box_items.length - 1),
         ease: "none",
@@ -100,7 +100,7 @@ const ReleaseComponent = () => {
                                 <p>I'm a front-end developer who loves to build beautiful and meaningful online experiences.
                                     <br/>
                                     <br/>
-                                    October 2021, my work has been creating websites using Angular.
+                                    Since October 2021, my work has been creating websites using Angular.
                                     <br/>
                                     <br/>
                                     Since February 2022, my work has been creating websites using Reactjs.

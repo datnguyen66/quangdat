@@ -376,3 +376,14 @@ section {padding: 50px 0;}
 .oneLadderLine{fill:none;stroke:#525752;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 
 
+@media screen and (max-width: 420px) {
+  .vertical__content {
+    display: block;
+  }
+  .vertical__content .col.col_right{
+    width: 100%;
+  }
+  .connect_textwrap{
+    padding: 10px;
+  }
+}

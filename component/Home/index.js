@@ -8,13 +8,11 @@ import ReleaseComponent from "../Release";
 import ReleaseHiddenComponent from "../ReleaseHidden";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ParticlesComponent from "../SnowFall/SnowFall";
-import Loading from "../Loading";
 
 export default function HomeComponent() {
     const refContent = useRef(null)
     const refHiddenContent = useRef(null)
     let linkAnimated = false;
-    
     
     useEffect(() => {
         const content = refContent.current
@@ -49,6 +47,15 @@ export default function HomeComponent() {
                 tl.reverse();
             });
         });
+        let hoveringContentRight = gsap.utils.toArray(".vertical__item", content);
+        hoveringContentRight.forEach((el) => {
+            el.addEventListener("mouseenter", () => {
+                tl.restart();
+            });
+            el.addEventListener("mouseleave", () => {
+                tl.reverse();
+            });
+        });
         
         
         const onFirstMove = (e) => {
@@ -69,10 +76,10 @@ export default function HomeComponent() {
         ScrollTrigger.update();
         requestAnimationFrame(raf);
         }
-        
         requestAnimationFrame(raf);
-      
         window.addEventListener("mousemove", onFirstMove);
+
+        
         return () => {
         window.removeEventListener("mousemove", onFirstMove);
         }
@@ -80,7 +87,6 @@ export default function HomeComponent() {
     
     return(
         <Fragment>
-            <Loading/>
             <div className={classes.content}>
                 <ParticlesComponent/>
                 <div ref={refContent}>

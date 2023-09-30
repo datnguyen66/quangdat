@@ -8,3 +8,9 @@
 .title{
     color: black;
 }
+.rightContent{
+    color: black;
+}
+.titleWhite{
+    color: var(--text);
+}
