@@ -376,7 +376,7 @@ section {padding: 50px 0;}
 .oneLadderLine{fill:none;stroke:#525752;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 780px) {
   .vertical__content {
     display: block;
   }
